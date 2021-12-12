@@ -1,0 +1,46 @@
+@import "./Colors.scss";
+
+$baseColor: $tersier;
+$gap: 8px;
+
+nav {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    background-color: $baseColor;
+    width: 73px;
+    overflow-y: scroll;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    header {
+        margin-top: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .icons {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: $gap;
+        }
+    }
+
+    .channels {
+        margin-top: $gap;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: $gap;
+    }
+
+    .line {
+        background-color: $line;
+        width: 30px;
+        height: 3px;
+    }
+}
