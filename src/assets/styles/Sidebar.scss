@@ -2,6 +2,7 @@
 
 $baseColor: $tersier;
 $gap: 8px;
+$widthNav: 73px;
 
 nav {
     position: fixed;
@@ -9,7 +10,7 @@ nav {
     bottom: 0;
     top: 0;
     background-color: $baseColor;
-    width: 73px;
+    width: $widthNav;
     overflow-y: scroll;
 
     &::-webkit-scrollbar {
@@ -43,4 +44,8 @@ nav {
         width: 30px;
         height: 3px;
     }
+}
+
+main {
+    margin-left: $widthNav;
 }

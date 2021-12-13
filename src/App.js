@@ -1,4 +1,4 @@
-import './App.css';
+import FriendsList from './Components/Home/FriendsList';
 import Sidebar from './Components/Sidebar';
 
 function App() {
@@ -8,7 +8,7 @@ function App() {
         <Sidebar />
       </header>
       <main>
-        
+        <FriendsList />
       </main>
     </section>
   );

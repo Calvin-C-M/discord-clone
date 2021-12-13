@@ -1,0 +1,145 @@
+@import "./Colors.scss";
+
+$transitionDuration: 0.1s;
+
+.friends-list {
+    position: fixed;
+    background-color: $secondary;
+    max-width: 400px;
+    top: 0;
+    bottom: 0;
+
+    $borderRadius: 5px;
+    $padding: 7px;
+    $paddingBox: 13px 15px;
+
+    header {
+        padding: 10px;
+        border-bottom: 2px solid $tersier;
+        
+        button {
+            background-color: $tersier;
+            border: none;
+            border-radius: $borderRadius;
+            padding: $padding;
+            width: 220px;
+            color: #616870;
+            text-align: left;
+            font-family: Arial, Helvetica, sans-serif;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }    
+    }
+
+    .main {
+        .menus {
+            padding: $padding;
+
+            .lists {
+                display: flex;
+                flex-direction: column;
+                gap: 3px;
+
+                .items {
+                    display: flex;
+                    align-items: center;
+                    gap: 20px;
+                    padding: $paddingBox;
+                    border-radius: $borderRadius;
+                    transition: $transitionDuration;
+
+                    span {
+                        color: $fontColor;
+                    }
+
+                    .icons {
+                        transform: scale(1.4);
+                    }
+
+                    &:hover {
+                        background-color: $primary;
+                        cursor: pointer;
+                        transition: $transitionDuration;
+                    }
+                }
+            }
+        }
+
+        .direct-messages {
+            padding: $padding;
+
+            .add-dm {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: $paddingBox;
+
+                span {
+                    font-size: 10pt;
+                    font-weight: 600;
+                    color: $fontColor;
+                    transition: $transitionDuration;
+                }
+
+                &:hover {
+                    span {
+                        color: #fff;
+                    }
+                }
+            }
+
+            .lists {
+                display: flex;
+                flex-direction: column;
+                gap: 3px;
+
+                .friend-items {
+                    padding: 5px 10px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    border-radius: $borderRadius;
+
+                    .detail {
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+
+                        .icons {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            background-color: #000;
+                            padding: 5px;
+                            border-radius: 50%;   
+                        }
+                        
+                        span {
+                            color: $fontColor;
+                        }
+                    }
+
+                    .delete-friend {
+                        transform: scale(1.2    );
+
+                        &:hover {
+                            color: #fff;
+                        }
+                    }
+
+                    &:hover {
+                        span {
+                            color: #fff;
+                        }
+
+                        background-color: $primary;
+                        transition: $transitionDuration;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+}
