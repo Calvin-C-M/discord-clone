@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { IoMdClose } from "react-icons/io"
+import ProfileDisplay from "../ProfileDisplay";
 
-const FriendBoxItem = ({ name, photo }) => {
+const FriendBoxItem = ({ name, photo, status }) => {
     const [hover, setHover] = useState(false);
     const photoProp = {
         width: 25,
@@ -14,13 +15,12 @@ const FriendBoxItem = ({ name, photo }) => {
             onMouseLeave={() => setHover(false)}
         >
             <section className="detail">
-                <section className="icons">
-                    <img 
-                        src={photo} 
-                        width={photoProp.width} 
-                        height={photoProp.height} 
-                    />
-                </section>
+                <ProfileDisplay 
+                    photo={photo}
+                    status={status}
+                    width={photoProp.width}
+                    height={photoProp.height}
+                />
                 <span>{name}</span>
             </section>
             { hover && <IoMdClose className="delete-friend" color="#8e9297" /> }

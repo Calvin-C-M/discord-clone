@@ -5,18 +5,27 @@ import { AiOutlinePlus } from "react-icons/ai"
 import FriendBoxItem from "./FriendBoxItem"
 import friendPhoto from "../../assets/img/discord-logo.png"
 import { useState } from "react"
+import CreateGroupDm from "./CreateGroupDm"
+import OfflineStatus from "../../Statuses/Offline"
+import OnlineStatus from "../../Statuses/Online"
+import IdleStatus from "../../Statuses/Idle"
+import BusyStatus from "../../Statuses/Busy"
 
 const FriendsList = () => {
+    const [showCreateGroup, setShowCreateGroup] = useState(false);
+    const [showCreateDmLabel, setShowCreateDmLabel] = useState(false);
 
     const friends = [
-        { name: "shiro-", photo: friendPhoto },
-        { name: "Dominuendo", photo: friendPhoto },
-        { name: "Rheza", photo: friendPhoto }
+        { name: "shiro-", photo: friendPhoto, status: "busy" },
+        { name: "Dominuendo", photo: friendPhoto, status: "online" },
+        { name: "Rheza", photo: friendPhoto, status: "offline" }
     ]
 
     const icons = {
         color: "#8e9297"
     }
+
+    const addDmEvent = () => (showCreateGroup) ? setShowCreateGroup(false) : setShowCreateGroup(true);
     
     return (
         <section className="friends-list">
@@ -39,13 +48,28 @@ const FriendsList = () => {
                 <section className="direct-messages">
                     <section className="add-dm">
                         <span>DIRECT MESSAGES</span>
-                        <AiOutlinePlus color="white" />
+                        { showCreateDmLabel 
+                            && 
+                        <span className="label-create-dm">
+                            Create DM
+                            <div id="triangle"></div>
+                        </span>
+                        }
+                        <AiOutlinePlus 
+                            onMouseEnter={() => setShowCreateDmLabel(true)}
+                            onMouseLeave={() => setShowCreateDmLabel(false)}
+                            onClick={addDmEvent} 
+                            className="create-dm" 
+                            color={icons.color} 
+                        />
                     </section>
+                    { showCreateGroup && <CreateGroupDm /> }
                     <section className="lists">
                         { friends.map(friend => (
                             <FriendBoxItem 
                                 name={friend.name} 
                                 photo={friend.photo} 
+                                status={friend.status}
                             />
                         )) }
                     </section>

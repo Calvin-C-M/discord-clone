@@ -1,0 +1,22 @@
+// FONTS
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Pontano+Sans&family=Quicksand&family=Red+Hat+Display&display=swap');
+
+@font-face {
+    font-family: "Uni Sans";
+    src: url("../fonts/Uni_Sans_Heavy.otf");
+}
+
+* {
+    font-family: 'Pontano Sans', sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.5pt;
+}
+
+// COLORS
+$primary: #36393f;
+$tersier: #202225;
+$secondary: #2f3136;
+
+$line: #2d2f32;
+
+$fontColor: #8e9297;
