@@ -10,6 +10,7 @@ import OfflineStatus from "../../Statuses/Offline"
 import OnlineStatus from "../../Statuses/Online"
 import IdleStatus from "../../Statuses/Idle"
 import BusyStatus from "../../Statuses/Busy"
+import UserArea from "../UserArea"
 
 const FriendsList = () => {
     const [showCreateGroup, setShowCreateGroup] = useState(false);
@@ -75,6 +76,9 @@ const FriendsList = () => {
                     </section>
                 </section>
             </section>
+            <footer>
+                <UserArea />
+            </footer>
         </section>
     );
 }
