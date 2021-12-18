@@ -50,10 +50,10 @@ const FriendsList = () => {
                         <span>DIRECT MESSAGES</span>
                         { showCreateDmLabel 
                             && 
-                        <span className="label-create-dm">
-                            Create DM
-                            <div id="triangle"></div>
-                        </span>
+                            <span className="label-create-dm">
+                                Create DM
+                                <div id="triangle"></div>
+                            </span>
                         }
                         <AiOutlinePlus 
                             onMouseEnter={() => setShowCreateDmLabel(true)}
