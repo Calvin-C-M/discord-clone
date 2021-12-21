@@ -1,24 +1,22 @@
 @import "./Defaults.scss";
 
-$border: 3px solid $secondary;
-$borderRadius: 50%;
 $statusWidth: 10px;
 $statusHeight: 10px;
 
 .stasuses {
     position: absolute;
     transform: translate(10px, 12px);
-}
-
-.offline {
-    border: $border;
-    border-radius: $borderRadius;
-    background-color: #747f8d;
+    border: 3px solid $secondary;
+    border-radius: 50%;
     width: $statusWidth;
     height: $statusHeight;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.offline {
+    background-color: #747f8d;
 
     .inside {
         border-radius: 50%;
@@ -29,32 +27,13 @@ $statusHeight: 10px;
 }
 
 .online {
-    border: $border;
-    border-radius: $borderRadius;
     background-color: #3ba55d;
-    width: $statusWidth;
-    height: $statusHeight;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .idle {
-    border: $border;
-    border-radius: $borderRadius;
-    width: $statusWidth;
-    height: $statusHeight;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+
 }
 
 .busy {
-    border: $border;
-    border-radius: $borderRadius;
-    width: $statusWidth;
-    height: $statusHeight;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+
 }

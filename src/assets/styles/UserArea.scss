@@ -7,7 +7,7 @@
     left: 0;
     background-color: #292b2f;
     color: #fff;
-    padding: 10px;
+    padding: 10px 5px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -17,6 +17,56 @@
         align-items: center;
         justify-content: space-between;
         gap: 10px;
+
+        .change-status {
+            position: absolute;
+            transform: translate(30px, -150px);
+            background-color: #18191c;
+            padding: 5px 10px;
+            border-radius: 5px;
+            z-index: 1;
+
+            #others {
+                $border: 1px solid #252628;
+                border-top: $border;
+                border-bottom: $border;
+            }
+
+            .status {
+                display: flex;
+                align-items: center;
+                gap: 15px;
+                padding: 5px;
+                border-radius: 5px;
+
+                .stasuses {
+                    position: unset;
+                    transform: unset;
+                    border: none;
+                }
+
+                &:hover {
+                    cursor: pointer;
+                    background-color: $blueColor;
+                }
+            }
+        }
+
+        .display {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.1s;
+
+            &:hover {
+                .profile-display {
+                    filter: brightness(80%);
+                }
+
+                cursor: pointer;
+                transition: 0.1s;
+            }
+        }
 
         .user-detail {
             $usernameFontSize: 10pt;
@@ -38,6 +88,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        padding: 0 5px;
 
         .icons {
             display: flex;
@@ -45,6 +96,7 @@
             justify-content: center;
             padding: 5px;
             transition: 0.1s;
+            color: #b9bbbe;
 
             span {
                 position: absolute;
@@ -72,6 +124,16 @@
                     position: absolute;
                     transform: translateX(50%);
                 }
+            }
+
+            .line {
+                background-color: #d33f42;
+                width: 2px;
+                height: 20px;
+                border-radius: 50%;
+                transform: rotate(45deg);
+                position: absolute;
+                transition: 0.2s;
             }
 
             &:hover {
